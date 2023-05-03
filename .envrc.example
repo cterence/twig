@@ -1,0 +1,7 @@
+source_up
+export TAILSCALE_API_KEY=
+export TAILSCALE_TAILNET=
+export CLOUDFLARE_API_KEY=
+export CLOUDFLARE_EMAIL=
+export GITLAB_TOKEN=
+export TF_VAR_secrets_project=
