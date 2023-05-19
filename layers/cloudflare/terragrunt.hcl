@@ -19,7 +19,7 @@ EOF
 }
 
 terraform {
-  source = "${get_repo_root()}/modules/cloudflare//."
+  source = "${get_parent_terragrunt_dir()}/../modules/cloudflare//."
 }
 
 dependency "secrets" {
