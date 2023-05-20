@@ -6,16 +6,16 @@ include "root" {
 generate "provider" {
   path      = "provider.tf"
   if_exists = "overwrite_terragrunt"
-  contents  = <<EOF
-terraform {
-  required_providers {
-    tailscale = {
-      source = "tailscale/tailscale"
-      version = "~> 0.13.0"
+  contents  = <<-EOF
+    terraform {
+      required_providers {
+        tailscale = {
+          source = "tailscale/tailscale"
+          version = "0.13.7"
+        }
+      }
     }
-  }
-}
-EOF
+    EOF
 }
 
 terraform {
@@ -27,7 +27,7 @@ dependency "secrets" {
 }
 
 inputs = {
-  subnet_routes =  {}
+  subnet_routes = {}
 
   acl = {
     acls = [{

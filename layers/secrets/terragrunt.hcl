@@ -6,16 +6,16 @@ include "root" {
 generate "provider" {
   path      = "provider.tf"
   if_exists = "overwrite_terragrunt"
-  contents  = <<EOF
-terraform {
-  required_providers {
-    gitlab = {
-      source = "gitlabhq/gitlab"
-      version = "~> 15.0"
+  contents  = <<-EOF
+    terraform {
+      required_providers {
+        gitlab = {
+          source = "gitlabhq/gitlab"
+          version = "15.11.0"
+        }
+      }
     }
-  }
-}
-EOF
+    EOF
 }
 
 terraform {
@@ -26,6 +26,7 @@ inputs = {
   secrets = [
     "cloudflare_tunnel_secret",
     "cloudflare_account_id",
-    "tailnet_dns_name"
+    "tailnet_dns_name",
+    "gcp_project_id"
   ]
 }
