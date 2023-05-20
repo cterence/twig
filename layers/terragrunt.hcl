@@ -1,5 +1,5 @@
-terragrunt_version_constraint = "~> 0.45.0"
-terraform_version_constraint  = "~> 1.4.0"
+terragrunt_version_constraint = "0.45.14"
+terraform_version_constraint  = "1.4.6"
 
 generate "backend" {
   path      = "backend.tf"
