@@ -27,11 +27,7 @@ dependency "secrets" {
 }
 
 inputs = {
-  subnet_routes = {
-    "kubernetes-subnet-router" = [
-      "10.96.0.0/12", "10.244.0.0/24"
-    ]
-  }
+  subnet_routes =  {}
 
   acl = {
     acls = [{
@@ -56,6 +52,13 @@ inputs = {
         "10.244.0.0/24" = ["autogroup:members"]
         "10.96.0.0/12"  = ["autogroup:members"]
       }
+    }
+
+    tagowners = {
+      "tag:k8s" = [
+        "tag:k8s-operator"
+      ]
+      "tag:k8s-operator" = []
     }
   }
 

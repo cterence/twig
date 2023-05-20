@@ -15,6 +15,7 @@ variable "acl" {
       routes   = map(list(string))
       exitnode = optional(list(string))
     })
+    tagowners = map(list(string))
   })
 }
 
