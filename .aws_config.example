@@ -1,0 +1,8 @@
+[profile twig]
+sso_start_url = 
+sso_region = 
+sso_account_name = 
+sso_account_id = 
+sso_role_name = 
+region = 
+credential_process = 

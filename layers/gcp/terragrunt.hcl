@@ -28,7 +28,7 @@ dependency "secrets" {
 
 inputs = {
   region        = "us-east1"
-  project_id    =  dependency.secrets.outputs.secrets.gcp_project_id
+  project_id    = dependency.secrets.outputs.secrets.gcp_project_id
   subnetwork    = "default"
   num_instances = 1
   hostname      = "frontline"

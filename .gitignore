@@ -35,3 +35,4 @@ terraform.rc
 
 .envrc
 .terragrunt-cache
+.aws_config
