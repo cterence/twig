@@ -1,5 +1,5 @@
 include "root" {
-  path           = find_in_parent_folders()
+  path           = find_in_parent_folders("root.hcl")
   merge_strategy = "deep"
 }
 
@@ -44,7 +44,30 @@ dependency "secrets" {
 inputs = {
   account_id = dependency.secrets.outputs.secrets.cloudflare_account_id
   tunnels = {
-    "Homelab" = dependency.secrets.outputs.secrets.cloudflare_tunnel_secret
+    "Homelab" = {
+      secret = dependency.secrets.outputs.secrets.cloudflare_tunnel_secret
+      # ingress_rules = {
+      #   "0" = {
+      #     hostname = "next.terence.cloud"
+      #     service = "http://localhost:8080"
+      #   }
+      #   "1" = {
+      #     hostname = "duplicati.terence.cloud"
+      #     service = "http://localhost:8200"
+      #   }
+      #   "2" = {
+      #     hostname = "*.k8s.terence.cloud"
+      #     service = "https://localhost"
+      #   }
+      #   "3" = {
+      #     hostname = "terence.cloud"
+      #     service = "https://localhost"
+      #   }
+      #   "4" = {
+      #     service = "http_status:404"
+      #   }
+      # }
+    }
   }
   bucket_name = "twig-tfstates"
 }

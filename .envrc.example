@@ -8,3 +8,4 @@ export TF_VAR_secrets_project=
 export AWS_ACCESS_KEY_ID=
 export AWS_SECRET_ACCESS_KEY=
 export AWS_CONFIG_FILE=$PWD/.aws_config
+export GITHUB_TOKEN=

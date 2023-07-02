@@ -7,5 +7,12 @@ variable "bucket_name" {
 }
 
 variable "tunnels" {
-  type = map(string)
+  type = map(object({
+    secret = string
+    ingress_rules = optional(map(object({
+      hostname = optional(string)
+      path     = optional(string)
+      service  = string
+    })), {})
+  }))
 }

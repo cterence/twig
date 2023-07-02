@@ -9,7 +9,7 @@ module "github_oidc_configuration" {
 
   openid_connect_provider_arn = module.github_oidc_provider.openid_connect_provider.arn
   repo                        = "cterence/xit"
-  default_conditions          = ["allow_main"]
+  default_conditions          = ["allow_all"]
   role_policy_arns = [
     module.github_oidc_policy.arn,
   ]
