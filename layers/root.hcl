@@ -1,5 +1,5 @@
-terragrunt_version_constraint = "0.45.14"
-terraform_version_constraint  = "1.4.6"
+terragrunt_version_constraint = "0.55.1"
+terraform_version_constraint  = "1.7.3"
 
 generate "backend" {
   path      = "backend.tf"
@@ -12,6 +12,10 @@ generate "backend" {
         endpoint                    = "https://d2c3d37341116095bc4b4f533dc5c487.r2.cloudflarestorage.com"
         region                      = "us-east-1"
         skip_credentials_validation = true
+        skip_region_validation      = true
+        skip_requesting_account_id  = true
+        skip_metadata_api_check     = true
+        skip_s3_checksum            = true
       }
     }
   EOF
