@@ -1,6 +1,6 @@
 module "firewall_rules" {
   source       = "terraform-google-modules/network/google//modules/firewall-rules"
-  version      = "7.0.0"
+  version      = "11.1.1"
   project_id   = var.project_id
   network_name = "default"
 
@@ -9,7 +9,7 @@ module "firewall_rules" {
     description             = null
     direction               = "INGRESS"
     priority                = null
-    ranges                  = ["0.0.0.0/0"]
+    ranges                  = ["109.0.228.97/32"]
     source_tags             = null
     source_service_accounts = null
     target_tags             = null
@@ -17,16 +17,9 @@ module "firewall_rules" {
     allow = [
       {
         protocol = "tcp"
-        ports    = ["80"]
-      },
-      {
-        protocol = "tcp"
-        ports    = ["443"]
+        ports    = ["22", "80", "443"]
       }
     ]
     deny = []
-    log_config = {
-      metadata = "INCLUDE_ALL_METADATA"
-    }
   }]
 }

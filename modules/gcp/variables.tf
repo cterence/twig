@@ -6,7 +6,7 @@ variable "project_id" {
 variable "region" {
   description = "The GCP region to create and test resources in"
   type        = string
-  default     = "us-central1"
+  default     = "us-east1"
 }
 
 variable "zone" {
@@ -55,16 +55,22 @@ variable "machine_type" {
 
 variable "source_image_family" {
   type    = string
-  default = "ubuntu-2204-lts"
+  default = "debian-12"
 }
 
 variable "source_image_project" {
   type    = string
-  default = "ubuntu-os-cloud"
+  default = "debian-cloud"
 }
 
 variable "disk_size_gb" {
   description = "Boot disk size in GB"
   type        = string
   default     = "30"
+}
+
+variable "disk_type" {
+  description = "Boot disk type, e.g. pd-standard or pd-ssd"
+  type        = string
+  default     = "pd-standard"
 }

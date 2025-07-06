@@ -1,6 +1,6 @@
 module "instance_template" {
   source               = "terraform-google-modules/vm/google//modules/instance_template"
-  version              = "8.0.1"
+  version              = "13.4.1"
   region               = var.region
   project_id           = var.project_id
   subnetwork           = var.subnetwork
@@ -10,11 +10,12 @@ module "instance_template" {
   source_image_family  = var.source_image_family
   source_image_project = var.source_image_project
   disk_size_gb         = var.disk_size_gb
+  disk_type            = var.disk_type
 }
 
 module "compute_instance" {
   source              = "terraform-google-modules/vm/google//modules/compute_instance"
-  version             = "8.0.1"
+  version             = "13.4.1"
   region              = var.region
   zone                = var.zone
   subnetwork          = var.subnetwork

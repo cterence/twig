@@ -11,7 +11,7 @@ generate "provider" {
       required_providers {
         google = {
           source = "hashicorp/google"
-          version = "4.65.2"
+          version = "6.42.0"
         }
       }
     }
@@ -22,14 +22,11 @@ terraform {
   source = "${get_parent_terragrunt_dir()}/../modules/gcp//."
 }
 
-dependency "secrets" {
-  config_path = "../secrets"
-}
-
 inputs = {
-  region        = "us-east1"
-  project_id    = dependency.secrets.outputs.secrets.gcp_project_id
-  subnetwork    = "default"
-  num_instances = 1
-  hostname      = "frontline"
+  region         = "us-east1"
+  project_id     = "nifty-structure-304711"
+  project_number = "602698434371"
+  subnetwork     = "default"
+  num_instances  = 1
+  hostname       = "gatus"
 }
