@@ -32,7 +32,7 @@ data "aws_iam_policy_document" "github_oidc" {
 
 module "github_oidc_policy" {
   source  = "terraform-aws-modules/iam/aws//modules/iam-policy"
-  version = "5.55.0"
+  version = "5.60.0"
 
   description = "Policy for GitHub OIDC"
   name        = "github-oidc-policy"
