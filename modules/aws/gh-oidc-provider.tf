@@ -1,11 +1,11 @@
 module "github_oidc_provider" {
   source  = "philips-labs/github-oidc/aws//modules/provider"
-  version = "0.7.1"
+  version = "0.8.1"
 }
 
 module "github_oidc_configuration" {
   source  = "philips-labs/github-oidc/aws"
-  version = "0.7.1"
+  version = "0.8.1"
 
   openid_connect_provider_arn = module.github_oidc_provider.openid_connect_provider.arn
   repo                        = "cterence/xit"
